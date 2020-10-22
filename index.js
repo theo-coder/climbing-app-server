@@ -2,10 +2,10 @@ const { ApolloServer } = require('apollo-server');
 const mongoose = require('mongoose');
 
 const typeDefs = require('./graphql/typeDefs')
-const { MONGODB } = require('./config')
 const resolvers = require('./graphql/resolvers')
 
 const PORT = process.env.PORT || 5000
+const MONGODB = process.env.DATABASE_URL
 
 const server = new ApolloServer({
     typeDefs,
